@@ -1,0 +1,183 @@
+/* ═══════════════════════════════════════════════════════════
+   ISL AI TRANSLATOR — GLOBAL STYLES
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── RESET & FOUNDATIONS ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #030712;
+  color: #F8FAFC;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0B1120; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Selection */
+::selection { background: rgba(56, 189, 248, 0.3); color: #F8FAFC; }
+
+/* ── APP LAYOUT ── */
+.app-layout-container {
+  display: flex;
+  min-height: 100vh;
+  background: #030712;
+}
+
+.app-main-viewport {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.app-content-body {
+  flex: 1;
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* ── TOP HEADER ── */
+.app-topheader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(11, 17, 32, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1E293B;
+  min-height: 50px;
+}
+
+.topheader-spacer {
+  flex: 1;
+}
+
+.topheader-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid #1E293B;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.topheader-user-badge:hover {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.topheader-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563EB, #7C3AED);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topheader-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.topheader-user-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #E2E8F0;
+}
+
+.topheader-user-role {
+  font-size: 0.68rem;
+  color: #64748B;
+}
+
+.topheader-chevron {
+  color: #475569;
+}
+
+/* ── BUTTONS ── */
+button {
+  font-family: 'Outfit', sans-serif;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(56, 189, 248, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.6); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .app-layout-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* ── INPUT STYLES ── */
+input, select, textarea {
+  font-family: 'Outfit', sans-serif;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3B82F6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ── CANVAS OVERLAY ── */
+canvas {
+  image-rendering: optimizeSpeed;
+}
+
+/* ── VIDEO ── */
+video {
+  background: #000;
+}
